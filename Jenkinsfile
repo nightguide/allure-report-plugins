@@ -22,9 +22,9 @@ pipeline {
       }   
     }
     
-      stage('Unit Tests') {
+      stage('Generate Reports') {
       steps {
-       junit 'target/surefire-reports/*.xml'
+        allure ([results: [[path:' target/allure-reports']] ])
  
       }
         
