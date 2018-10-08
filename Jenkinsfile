@@ -15,8 +15,8 @@ pipeline {
         //Send to Slack notify
         slackSend (color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
         //Build
-        sh 'mvn clean site -P grid'
-	sh 'mvn clean verify -P grid -Dthreads=3 -Dbrowser=chrome'
+        sh 'mvn clean verify'
+	
       
 	      
       }   
