@@ -22,13 +22,7 @@ pipeline {
       }   
     }
     
-      stage('Generate Reports') {
-      steps {
-        allure ([results: [[path:'all-in-one/target/it/sample/target/allure-report']]  ])
- 
-      }
-        
-    }
+   
   
      }
 post {
