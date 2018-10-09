@@ -28,10 +28,12 @@ pipeline {
 post {
     success {
       slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+	allure includeProperties: false, jdk: '', results: [[path: 'all-in-one/target/it/sample/data']]
     }
 
     failure {
       slackSend (color: '#FF0000', message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+	allure includeProperties: false, jdk: '', results: [[path: 'all-in-one/target/it/sample/data']]
     }     
  }
 }
